@@ -20,7 +20,7 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm install --include=optional
+        run: npm ci --include=optional
 
       - name: Build Frontend
         run: npm run build
@@ -32,8 +32,8 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           port: ${{ secrets.VM_PORT }}
-          source: "build/*"
-          target: " ~/anthonydev.xyz"
+          source: "dist/*"
+          target: "~/anthonydev.xyz"
           strip_components: 1
 
       - name: Reload PM2 Process
@@ -43,5 +43,5 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           port: ${{ secrets.VM_PORT }}
-          script: |        
+          script: |
             pm2 reload "anthonydev.xyz"
