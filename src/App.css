@@ -1,17 +1,28 @@
-.app {
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: #fff;
   color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app-wrapper.dark {
+  background: #111;
+  color: #fff;
+}
+
+.app {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, color 0.3s;
   position: relative;
 }
 
 .app.dark {
-  background: #111;
-  color: #fff;
+  background: inherit;
+  color: inherit;
 }
 
 .content {
@@ -28,6 +39,14 @@
   margin-top: 1rem;
 }
 
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+}
+
 .toggle {
   position: absolute;
   top: 20px;
@@ -39,4 +58,5 @@
   padding: 10px 14px;
   cursor: pointer;
   font-size: 1.1rem;
+  z-index: 10;
 }
