@@ -20,7 +20,7 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm i
+        run: npm install --include=optional
 
       - name: Build Frontend
         run: npm run build
