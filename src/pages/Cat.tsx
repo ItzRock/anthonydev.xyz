@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Cat() {
     return (
         <div style={{
             display: 'flex',
